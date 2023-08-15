@@ -1,0 +1,7 @@
+{
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.windowsEnableConpty": true,
+  "files.associations": {
+    "vector": "cpp"
+  }
+}

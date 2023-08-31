@@ -1,4 +1,5 @@
 {
+  "terminal.integrated.cwd": "${fileDirname}",
   "terminal.integrated.defaultProfile.windows": "bash (MSYS2)",
   "terminal.integrated.profiles.windows": {
     "bash (MSYS2)": {
@@ -16,6 +17,7 @@
   "terminal.integrated.windowsEnableConpty": true,
   "files.associations": {
     "vector": "cpp",
-    "xstring": "cpp"
+    "xstring": "cpp",
+    "iostream": "cpp"
   }
 }

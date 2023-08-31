@@ -1,6 +1,31 @@
 {
   "tasks": [
     {
+      "label": "make",
+      "type": "shell",
+      "command": "./makefile.sh",
+      "args": ["\"${relativeFile}\" \"${workspaceFolder}\""],
+      "presentation": {
+          "reveal": "always",
+          "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "make clean",
+      "type": "shell",
+      "command": "make",
+      "args": ["clean"],
+      "options": {
+          "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+          "reveal": "always",
+          "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
       "type": "cppbuild",
       "label": "C/C++: g++.exe build active file",
       "command": "C:\\msys64\\mingw64\\bin\\g++.exe",

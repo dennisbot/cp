@@ -64,7 +64,7 @@
       }
     },
     {
-      "label": "Open wt",
+      "label": "Open WT (MSYS2)",
       "type": "shell",
       "command": "ssm",
       "options": {

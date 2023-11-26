@@ -20,17 +20,17 @@ using namespace std;
 
 size_t N;
 
-void store_digits(set<size_t>& myset, size_t number) {
+void store_digits(set<size_t>* myset, size_t number) {
     while (number > 0) {
-        myset.insert(number % 10);
+        myset->insert(number % 10);
         number /= 10;
     }
 }
 
 bool have_same_digits(size_t day, size_t month) {
     set<size_t> myset;
-    store_digits(myset, day);
-    store_digits(myset, month);
+    store_digits(&myset, day);
+    store_digits(&myset, month);
     return myset.size() == 1;
 }
 

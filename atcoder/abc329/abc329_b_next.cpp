@@ -1,13 +1,15 @@
 #include <algorithm>
+#include <cmath>
 #include <iomanip>
 #include <iostream>
+#include <limits>
 #include <map>
-#include <cmath>
 #include <numeric>
 #include <set>
 #include <stack>
 #include <string>
 #include <vector>
+#include <memory>
 #define db(a) cout << #a << " = " << a << endl;
 #define db2(a, b) cout << #a << " = " << a << " " << #b << " = " << b << endl;
 #define db3(a, b, c) cout << #a << " = " << a << " " << #b << " = " << b << " " << #c << " = " << c << endl;
@@ -20,11 +22,11 @@ using namespace std;
 
 size_t N;
 
-long long int solve(const vector<long long int>& numbers, const long long int& curmax) {
-    long long int secondmax = -1 * (1 << 30);
-    for (size_t i = 0; i < N; i++) {
-        if (secondmax < numbers[i] && numbers[i] != curmax) {
-            secondmax = numbers[i];
+auto solve(const vector<int>& numbers, const int& curmax) {
+    auto secondmax = numeric_limits<int>::min();
+    for (const auto& number : *numbers) {
+        if (secondmax < number && number != curmax) {
+            secondmax = number;
         }
     }
 
@@ -33,12 +35,12 @@ long long int solve(const vector<long long int>& numbers, const long long int& c
 
 int main() {
     while (cin >> N) {
-        vector<long long int> numbers(N);
-        long long int curmax = -1 * (1 << 30);
-        for (size_t i = 0; i < N; i++) {
-            cin >> numbers[i];
-            if (numbers[i] > curmax) {
-                curmax = numbers[i];
+        vector<int> numbers(N);
+        int curmax = numeric_limits<int>::min();
+        for(auto& number : numbers) {
+            cin >> number;
+            if (number > curmax) {
+                curmax = number;
             }
         }
 

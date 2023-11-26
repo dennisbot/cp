@@ -22,9 +22,9 @@ using namespace std;
 
 size_t N;
 
-auto solve(vector<int>* numbers, const int& curmax) {
+auto solve(const vector<int>& numbers, const int& curmax) {
     auto secondmax = numeric_limits<int>::min();
-    for (const auto& number : *numbers) {
+    for (const auto& number : numbers) {
         if (secondmax < number && number != curmax) {
             secondmax = number;
         }
@@ -44,7 +44,7 @@ int main() {
             }
         }
 
-        cout << solve(&numbers, curmax) << endl;
+        cout << solve(numbers, curmax) << endl;
     }
 
     return 0;

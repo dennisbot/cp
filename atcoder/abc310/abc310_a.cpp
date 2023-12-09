@@ -1,8 +1,8 @@
 #include <algorithm>
+#include <cmath>
 #include <iomanip>
 #include <iostream>
 #include <map>
-#include <cmath>
 #include <numeric>
 #include <set>
 #include <stack>
@@ -21,23 +21,20 @@ typedef long long ll;
 
 using namespace std;
 
-ll power(size_t base, size_t exponent) {
-    ll res = 1;
-    for (size_t i = 0; i < exponent; i++) {
-        res *= base;
-    }
-
-    return res;
-}
-
-ll solve(size_t A, size_t B) {
-    return power(A, B) + power(B, A);
+int solve(const vector<int>& dishes, int current_price, int price_with_coupon) {
+    auto min_dish_price = *min_element(dishes.begin(), dishes.end());
+    return min(current_price, min_dish_price + price_with_coupon);
 }
 
 int main() {
-    size_t A, B;
-    while (cin >> A >> B) {
-        cout << solve(A, B) << endl;
+    size_t N, P, Q;
+    while (cin >> N >> P >> Q) {
+        vector<int> dishes(N);
+        for (auto& dish : dishes) {
+            cin >> dish;
+        }
+
+        cout << solve(dishes, P, Q) << endl;
     }
 
     return 0;

@@ -1,15 +1,15 @@
 #include <algorithm>
+#include <cmath>
 #include <iomanip>
 #include <iostream>
+#include <limits>
 #include <map>
-#include <cmath>
+#include <memory>
 #include <numeric>
 #include <set>
 #include <stack>
 #include <string>
 #include <vector>
-#include <limits>
-#include <memory>
 #define db(a) cout << #a << " = " << a << endl;
 #define db2(a, b) cout << #a << " = " << a << " " << #b << " = " << b << endl;
 #define db3(a, b, c) cout << #a << " = " << a << " " << #b << " = " << b << " " << #c << " = " << c << endl;
@@ -24,7 +24,7 @@ size_t N, L;
 
 auto solve(const vector<size_t>& scores, const size_t& at_least) {
     auto total = 0;
-    for(const auto& score : scores) {
+    for (const auto& score : scores) {
         if (score >= at_least) {
             total++;
         }
@@ -36,7 +36,7 @@ auto solve(const vector<size_t>& scores, const size_t& at_least) {
 int main() {
     while (cin >> N >> L) {
         vector<size_t> scores(N);
-        for(auto& score : scores) {
+        for (auto& score : scores) {
             cin >> score;
         }
 

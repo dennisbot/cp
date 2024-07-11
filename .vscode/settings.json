@@ -10,7 +10,7 @@
       ],
       "env": {
         "CHERE_INVOKING": "1",
-        "MSYSTEM": "MINGW64",
+        "MSYSTEM": "UCRT64",
       }
     }
   },
